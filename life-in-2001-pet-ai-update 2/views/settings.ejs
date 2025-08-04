@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+...
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: white; padding: 20px; }
+    input, select { padding: 10px; background: #222; color: white; border: none; width: 100%; margin: 10px 0; }
+    button { background: #0f7; color: black; padding: 10px; border: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>⚙️ Settings</h1>
+  <form method="POST">
+    <label>Email:</label>
+    <input name="email" value="<%= user.email %>" />
+    <label>Theme:</label>
+    <select name="theme">
+      <option value="dark" <%= user.theme === "dark" ? "selected" : "" %>>Dark</option>
+      <option value="light" <%= user.theme === "light" ? "selected" : "" %>>Light</option>
+    </select>
+    <label>Language:</label>
+    <select name="language">
+      <option value="normal" <%= user.language === "normal" ? "selected" : "" %>>Normal</option>
+      <option value="tiktok" <%= user.language === "tiktok" ? "selected" : "" %>>TikTok English</option>
+    </select>
+    <button type="submit">Save</button>
+    <label>Enable Silly Mode:</label>
+    <input type="checkbox" name="silly" <%= user.silly ? "checked" : "" %> />
+  </form>
+</body>
+</html>
